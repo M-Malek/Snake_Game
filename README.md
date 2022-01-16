@@ -4,7 +4,7 @@ Classic snake game created during 100 days of Code Challenge:
 https://www.udemy.com/share/103IHM3@VBQYo05_-WD9j0wSKiukqeS490POl0L7ZnHd_Ya6gOSvyxuoNjVmaZIcEGQjMtmc/
 
 Controls:
-Use keys arrow to control snake
+Use keyboard arrows to control snake
 
 Game end:
 - snake hit your tail

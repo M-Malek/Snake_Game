@@ -11,13 +11,20 @@ class Snake:
         self.SNAKE_HEAD = self.snake_segments[0]
 
     # Set snake on board
+    def add_snake_segment(self, pos):
+        segment = Turtle(shape="square")
+        segment.penup()
+        segment.color("white")
+        segment.goto(pos)
+        self.snake_segments.append(segment)
+
     def initialize_snake(self):
         for pos in self.START_POS:
-            segment = Turtle(shape="square")
-            segment.penup()
-            segment.color("white")
-            segment.goto(pos)
-            self.snake_segments.append(segment)
+            self.add_snake_segment(pos)
+
+    # Extend snake
+    def extend_snake(self):
+        self.add_snake_segment(self.snake_segments[-1].position())
 
     # Let snake move forward (note: this method is responsible only for moving snake by MOVE_VALUE, not for snake
     # direction)
@@ -30,7 +37,7 @@ class Snake:
 
     # Method responsible for prevent instant change of snake direction
     def prevent_instant_change(self, new_heading):
-        print(self.SNAKE_HEAD.heading())
+        # print(self.SNAKE_HEAD.heading())
         if self.SNAKE_HEAD.heading() != new_heading:
             return True
         else:

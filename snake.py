@@ -8,6 +8,7 @@ class Snake:
         self.MOVE_VALUE = 20
         self.snake_segments = []
         self.initialize_snake()
+        self.SNAKE_HEAD = self.snake_segments[0]
 
     # Set snake on board
     def initialize_snake(self):
@@ -28,22 +29,26 @@ class Snake:
         self.snake_segments[0].forward(self.MOVE_VALUE)
 
     # Method responsible for prevent instant change of snake direction
-    def prevent_instant_change(self):
-        pass
+    def prevent_instant_change(self, new_heading):
+        print(self.SNAKE_HEAD.heading())
+        if self.SNAKE_HEAD.heading() != new_heading:
+            return True
+        else:
+            return False
 
     # Methods responsible for changing snake direction
     def up(self):
-        head = self.snake_segments[0]
-        head.setheading(90)
+        if self.prevent_instant_change(270):
+            self.SNAKE_HEAD.setheading(90)
 
     def down(self):
-        head = self.snake_segments[0]
-        head.setheading(270)
+        if self.prevent_instant_change(90):
+            self.SNAKE_HEAD.setheading(270)
 
     def left(self):
-        head = self.snake_segments[0]
-        head.setheading(180)
+        if self.prevent_instant_change(0):
+            self.SNAKE_HEAD.setheading(180)
 
     def right(self):
-        head = self.snake_segments[0]
-        head.setheading(0)
+        if self.prevent_instant_change(180):
+            self.SNAKE_HEAD.setheading(0)

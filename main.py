@@ -1,7 +1,7 @@
 from turtle import Screen
-from snake import Snake
-from food import Food
-from scoreboard import Score
+from core.snake import Snake
+from core.food import Food
+from core.scoreboard import Score
 import time
 
 # Screen initialize + screen setup

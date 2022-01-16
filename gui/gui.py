@@ -31,18 +31,25 @@ class GUI:
 
         self.window.mainloop()
 
+    def menu_reload(self):
+        # Function to reload a menu
+        pass
+
     def start_game(self):
         self.window.destroy()
         main_game()
+        GUI()
 
     def gui_controls(self):
+        # Destroy all buttons, show controls. Exit button will reload menu
         pass
 
     def gui_controls_sidebar(self):
+        # Window with controls attach to game window
         pass
 
     def author(self):
-        self.gui_quit.destroy()
+        # Destroy all buttons, show author. Exit button will reload menu
         Label(self.window, text="Created by Michal Malek. Upgraded version of Snake Game from 100 Days of Code Python "
                                 "Challenge")
 

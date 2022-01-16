@@ -27,6 +27,7 @@ def main_game():
 
     # Main game loop
     is_game_on = True
+
     while is_game_on:
         screen.update()
         time.sleep(0.1)

@@ -1,6 +1,6 @@
 Snake Game v1.0
 
-Classic snake game created during 100 days of Code Challenge:
+Classic snake game created during 100 days of Code Python Challenge:
 https://www.udemy.com/share/103IHM3@VBQYo05_-WD9j0wSKiukqeS490POl0L7ZnHd_Ya6gOSvyxuoNjVmaZIcEGQjMtmc/
 
 Controls:

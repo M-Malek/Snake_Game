@@ -3,6 +3,8 @@ Snake Game v1.1
 Classic snake game created during 100 days of Code Python Challenge:
 https://www.udemy.com/share/103IHM3@VBQYo05_-WD9j0wSKiukqeS490POl0L7ZnHd_Ya6gOSvyxuoNjVmaZIcEGQjMtmc/
 
+It is an upgraded version of Snake Game created during a challenge. Added own GUI interface with controls help.
+
 Controls:
 Use keyboard arrows to control snake
 

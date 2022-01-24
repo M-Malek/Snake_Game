@@ -18,15 +18,21 @@ def main_game():
     food = Food()
     score = Score()
 
+    is_game_on = True
+
+    def turn_off():
+        score.shut_down = False
+        print(score.shut_down)
+
     # Listen to user controls: how to control snake
     screen.listen()
     screen.onkey(snake.up, "Up")
     screen.onkey(snake.down, "Down")
     screen.onkey(snake.left, "Left")
     screen.onkey(snake.right, "Right")
+    screen.onkey(turn_off, "c")
 
     # Main game loop
-    is_game_on = True
 
     while is_game_on:
         screen.update()
@@ -44,13 +50,17 @@ def main_game():
         # Wall collision:
         if snake.SNAKE_HEAD.xcor() >= 290 or snake.SNAKE_HEAD.xcor() <= -290 or snake.SNAKE_HEAD.ycor() >= 290 or \
                 snake.SNAKE_HEAD.ycor() <= -290:
-            is_game_on = False
-            score.game_over()
+            # is_game_on = False
+            # score.game_over()
+            score.reset()
+            snake.reset()
 
         # Snake collision:
         for segment in snake.snake_segments[1:]:
             if snake.SNAKE_HEAD.distance(segment) < 10:
-                is_game_on = False
-                score.game_over()
+                # is_game_on = False
+                # score.game_over()
+                score.reset()
+                snake.reset()
 
     screen.exitonclick()

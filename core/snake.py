@@ -59,3 +59,11 @@ class Snake:
     def right(self):
         if self.prevent_instant_change(180):
             self.SNAKE_HEAD.setheading(0)
+
+    # Method to reset snake position
+    def reset(self):
+        for snake in self.snake_segments:
+            snake.goto(2000, 2000)
+        self.snake_segments.clear()
+        self.initialize_snake()
+        self.SNAKE_HEAD = self.snake_segments[0]

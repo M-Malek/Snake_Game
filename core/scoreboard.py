@@ -12,7 +12,10 @@ class Score(Turtle):
         self.penup()
         self.goto(0, 280)
         self.score = 0
+
         self.high_score = 0
+        self.load_high_score()
+
         self.score_updater()
         self.shut_down = False
 
@@ -24,12 +27,22 @@ class Score(Turtle):
         self.clear()
         self.write(f"Score: {self.score}, High Score: {self.high_score}", align="center", font=font)
 
-    def reset(self):
+    def score_reset(self):
         if self.score > self.high_score:
             self.high_score = self.score
+            self.save_high_score()
         self.score = 0
         self.score_updater()
 
     def game_over(self):
         self.goto(0, 0)
         self.write("GAME OVER", align="center", font=font)
+
+    def save_high_score(self):
+        with open("core/high_score.txt", mode="w") as file:
+            file.write(str(self.high_score))
+
+    def load_high_score(self):
+        with open("core/high_score.txt") as file:
+            score = file.read()
+            self.high_score = int(score)

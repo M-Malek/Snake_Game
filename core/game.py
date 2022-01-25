@@ -52,7 +52,7 @@ def main_game():
                 snake.SNAKE_HEAD.ycor() <= -290:
             # is_game_on = False
             # score.game_over()
-            score.reset()
+            score.score_reset()
             snake.reset()
 
         # Snake collision:
@@ -60,7 +60,7 @@ def main_game():
             if snake.SNAKE_HEAD.distance(segment) < 10:
                 # is_game_on = False
                 # score.game_over()
-                score.reset()
+                score.score_reset()
                 snake.reset()
 
     screen.exitonclick()

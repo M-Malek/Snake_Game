@@ -21,8 +21,7 @@ def main_game():
     is_game_on = True
 
     def turn_off():
-        score.shut_down = False
-        print(score.shut_down)
+        screen.bye()
 
     # Listen to user controls: how to control snake
     screen.listen()

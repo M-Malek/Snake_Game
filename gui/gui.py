@@ -1,3 +1,4 @@
+import _tkinter
 import tkinter
 from tkinter import *
 from core.game import main_game
@@ -59,8 +60,10 @@ class GUI:
 
     def start_game(self):
         self.window.destroy()
-        main_game()
-        GUI()
+        try:
+            main_game()
+        except _tkinter.TclError:
+            GUI()
 
     def gui_show_controls(self):
         # Destroy all buttons, show controls. Exit button will reload menu

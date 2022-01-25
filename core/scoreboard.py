@@ -43,6 +43,9 @@ class Score(Turtle):
             file.write(str(self.high_score))
 
     def load_high_score(self):
-        with open("core/high_score.txt") as file:
-            score = file.read()
-            self.high_score = int(score)
+        try:
+            with open("core/high_score.txt") as file:
+                score = file.read()
+                self.high_score = int(score)
+        except ValueError:
+            self.high_score = 0
